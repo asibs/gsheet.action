@@ -82,17 +82,17 @@ jobs:
           echo "BRANCH=${BRANCH_RELEASE}" >> ${GITHUB_ENV}
           echo "MERGE_BRANCH=${MERGE_RELEASE}" >> ${GITHUB_ENV}
 
-      # - name: setup ssh keys and known_hosts
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
-      #     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-      #     ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+      - name: setup ssh keys and known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
       - name: setup git
         run: |
-          git config --global user.email "noreply@github.com"
-          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "6641867+asibs@users.noreply.github.com"
+          git config --global user.name "asibs"
           git remote set-url origin git@github.com:${{ github.repository }}.git
           git fetch origin --tags --force --prune
 
