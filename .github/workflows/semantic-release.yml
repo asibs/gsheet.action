@@ -17,9 +17,10 @@ jobs:
         with:
           fetch-depth: 0
       
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
+          # semantic release needs node 20+
+          node-version: 20
           cache: 'npm'
 
       - name: semantic-release
