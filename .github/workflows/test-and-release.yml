@@ -89,12 +89,12 @@ jobs:
       #     ssh-agent -a $SSH_AUTH_SOCK > /dev/null
       #     ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
 
-      # - name: setup git
-      #   run: |
-      #     git config --global user.email "mail@hinterland.dev"
-      #     git config --global user.name "jroehl"
-      #     git remote set-url origin git@github.com:${{ github.repository }}.git
-      #     git fetch origin --tags --force --prune
+      - name: setup git
+        run: |
+          git config --global user.email "noreply@github.com"
+          git config --global user.name "GitHub Action Bot"
+          git remote set-url origin git@github.com:${{ github.repository }}.git
+          git fetch origin --tags --force --prune
 
       - name: create or checkout branch
         run: |
