@@ -1,6 +1,6 @@
-name: 'gsheet.action'
-description: 'This action helps in CRUD operations on a google sheet.'
-author: 'jroehl <mail@johannroehl.de>'
+name: 'gsheet.action.asibs'
+description: 'This action helps in CRUD operations on a google sheet. Forked from https://github.com/jroehl/gsheet.action'
+author: 'asibs'
 branding:
   icon: book
   color: green
